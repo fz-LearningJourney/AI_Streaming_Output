@@ -5,7 +5,7 @@
 ### 1. Spring上下文和Bean初始化
 
 ```java
-	private static ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;//import org.springframework.context.ApplicationContext;
     private OpenAiChatModel openAiChatModel;
     private AIChatService aiChatService;
     @Autowired
@@ -30,6 +30,7 @@
 ### 2. WebSocket流式响应处理
 
 ```java
+initBeans(); // 确保 beans 已初始化
 if(toUserId.equals("0")) {
     System.out.println("AI对话");
     //将时间戳作为AI的发送ID
